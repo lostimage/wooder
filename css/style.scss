@@ -42,15 +42,15 @@ main {
 	color: $custom-grey-color;
 	font-size: 169.38px;
 	line-height: 1;
-	font-weight: 700;
+font-family: $title-font;
 	letter-spacing: 0.07em;
 	text-transform: uppercase;
 }
 .ba-title {
 	color: $black;
 	font-size: 48px;
-	font-weight: 700;
-	line-height: 100px;
+	font-family: $title-font;
+	line-height: 90px;
 	margin: 0;
 	text-transform: uppercase;
 	letter-spacing: 0.07em;
@@ -84,10 +84,12 @@ button,
 	color: $white;
 	border: 3px solid $white;
 	line-height: 54px;
-	padding: 0 63px 0 83px;
+	padding: 0 55px 0 83px;
 	z-index: 3;
-	top: 48%;
-	left: 36.5%;
+	top: 49%;
+	left: 36.6%;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
 	&:hover {
 		svg {
 			transform: translateX(10px);
@@ -95,14 +97,17 @@ button,
 		background-color: rgba(0,0,0,0.5);
 	}
 	& svg {
-		margin-left:10px;
+
 		transition: transform 0.3s ease-in;
 	}
 }
 .ba-button--learn-black{
 	font-size: 14px;
-	font-weight: 700;
 	color: $black;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	padding-left: 4px;
+	font-family: $title-font;
 	&:hover {
 		svg {
 			transform: translateX(10px);
@@ -253,8 +258,11 @@ textarea {
 .ba-nav{
 	display: flex;
 	list-style-type: none;
+	padding: 0;
+	margin-top: 17px;
+
 	&__item{
-		margin-left: 100px;
+		margin-left: 105px;
 
 	}
 	&__link{
@@ -322,19 +330,20 @@ textarea {
 	}
 	&__title {
 		top: 32%;
-		 left: 17.7%;
+		left: 17.2%;
 
 		font-size: 52.4px;
 		color: $theme-color;
-		letter-spacing: 0.01em;
+		letter-spacing: 0.2em;
 		position: absolute;
 		transform: rotate(90deg);
 		z-index: 3;
+		font-weight: 700;
 		&:before {
 			position: absolute;
 			content:'';
 			top: 45%;
-			left: -140%;
+			left: -95%;
 			border: 3px solid $theme-color;
 			width: 51px;
 
@@ -344,8 +353,8 @@ textarea {
 .ba-scroll {
 	position: absolute;
 	z-index: 3;
-	top: 60%;
-	left: 36.5%;
+	top: 61%;
+	left: 36.6%;
 	transition: transform .3s ease-in;
 	&:hover {
 		transform: translateY(5%);
@@ -357,19 +366,19 @@ textarea {
 .ba-furniture {
 	display: flex;
 	position: relative;
-	padding: 113px 0 150px;
+	padding: 104px 0 150px;
 
 
 	&__info {
-		padding-left: 150px;
-		padding-right: 50px;
+		padding: 90px 36px 0 166px;
+
 		&:before {
 			position: absolute;
 			content:'';
 			width: 151px;
 			border-bottom:1px solid $black;
-			top: 24%;
-			left: -2%;
+			top: 36%;
+			    left: -1%;
 
 		}
 		&:after {
@@ -377,12 +386,12 @@ textarea {
 			content:'';
 			width: 44px;
 			border-bottom:3px solid $theme-color;
-			top: 36%;
-			left: 7%;
+			top: 45%;
+			left: 8%;
 
 		}
 		& p {
-
+			margin: 0 0 17px;
 		}
 	}
 	&__img {
@@ -406,14 +415,14 @@ textarea {
 }
 .ba-number-title {
 	font-size: 36px;
-	font-weight: 700;
+
 	color: $black;
 	position: absolute;
 
 	&:after {
 		position:absolute;
 		content:'';
-		top: 109px;
+		top: 144px;
 		left: 39%;
 		height: 53px;
 		border-left: 4px solid $theme-color;
@@ -423,8 +432,11 @@ textarea {
 	}
 }
 .ba-number-title--furniture {
-	top: 61%;
-	left: -2%;
+	top: 65%;
+	left: 0%;
+
+	font-family: $title-font;
+
 }
 .ba-custom-title--furniture {
 	top: 15%;
@@ -435,7 +447,7 @@ textarea {
 .ba-decor {
 	display: flex;
 	position: relative;
-	padding: 113px 0 150px;
+	padding: 130px 0 150px;
 			&:after {
 				position:absolute;
 				content:'D';
@@ -446,31 +458,32 @@ textarea {
 			}
 	&__info {
 		text-align: right;
-		padding-right: 156px;
+		padding-right: 180px;
 	    padding-left: 120px;
-	    padding-top: 100px;
+	    padding-top: 95px;
 	    &:before {
 	    	position: absolute;
 	    	content:'';
 	    	width: 151px;
 	    	border-bottom:1px solid $black;
-	    	top: 40%;
-	    	left: 90%;
+	    	top: 39%;
+	    	left: 87%;
 	    }
 	    &:after {
 	    	position: absolute;
 	    	content:'';
 	    	width: 44px;
 	    	border-bottom:4px solid $theme-color;
-	    	top: 51%;
-	    	left: 90%;
+	    	top: 47%;
+	    	left: 87%;
 	    }
 		& p {
-
+			margin: 0 0 15px;
 		}
 	}
 	&__img {
 		position: relative;
+		margin-left: -25px;
 		flex-shrink: 0;
 		box-shadow: 0px 0px 14.56px 1.44px rgba(0, 0, 0, 0.25);
 		&:after {
@@ -489,8 +502,9 @@ textarea {
 	}
 }
 .ba-number-title--decor {
-	top: 62%;
-	right: -5%;
+	top: 66.5%;
+	right: 0%;
+	font-family: $title-font;
 }
 .ba-custom-title--decor {
 	top: 15%;
@@ -499,9 +513,9 @@ textarea {
 ///// QUALITY SECTION
 .ba-quality {
 	text-align: center;
-	padding: 100px;
+	padding: 53px 0 137px;
 	& p {
-		margin: 0 auto;
+		margin: 22px auto 0;
 		max-width: 560px;
 	}
 }
@@ -549,7 +563,7 @@ textarea {
 //// VIDEO SECTION
 
 .ba-video {
-	padding: 90px 0;
+	padding: 90px 0 85px;
 	background: $black url(../img/bgvideo.jpg) no-repeat 50% 0;
 	background-size: cover;
 	color:$white;
@@ -575,7 +589,7 @@ textarea {
 		max-width: 1560px;
 		border:1px solid $theme-color;
 		margin: 0 auto;
-		padding: 214px 0 186px 385px;
+		padding: 203px 0 186px 385px;
 		position: relative;
 		&:before {
 				position: absolute;
@@ -613,6 +627,7 @@ textarea {
 	}
 	& p {
 		max-width: 400px;
+		margin: 31px 0 39px;
 	}
 
 }
@@ -622,7 +637,7 @@ textarea {
  .ba-about {
  	display: flex;
  	position: relative;
- 	padding: 113px 0 150px;
+ 	padding: 139px 0 121px;
  	&:after {
  		position:absolute;
  		content:'A';
@@ -633,7 +648,7 @@ textarea {
  	}
  	&__info {
  		text-align: left;
- 		padding-top: 93px;
+ 		padding-top: 75px;
  	    padding-left: 97px;
  	    max-width: 432px;
  	    position: relative;
@@ -642,7 +657,7 @@ textarea {
  	    		content:'';
  	    		width: 151px;
  	    		border-bottom:1px solid $black;
- 	    		top: 35%;
+ 	    		top: 29%;
  	    		left: -17%;
  	    	}
  	    	&:after {
@@ -650,7 +665,7 @@ textarea {
  	    		content:'';
  	    		width: 44px;
  	    		border-bottom:4px solid $theme-color;
- 	    		top: 54%;
+ 	    		top: 48%;
  	    		left: 7%;
  	    	}
  		& p {
@@ -674,7 +689,8 @@ textarea {
  }
 /// FOOTER
 .ba-footer {
-	background:$black;
+	background:$black url('../img/bgfooter.jpg') no-repeat;
+	background-size: cover;
 	padding: 23px 0;
 	&__nav{
 		display: flex;
