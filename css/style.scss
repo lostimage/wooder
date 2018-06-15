@@ -1,7 +1,8 @@
 @import "_layout.scss";
 @import "_normalize.scss";
 @import "slick.scss";
-@import "slick-theme.scss";
+@import "magnific-popup";
+// @import "slick-theme.scss";
 
 @font-face {
     font-family: 'proxima_nova_rgbold';
@@ -28,6 +29,13 @@ $white:#fff;
 $custom-grey-color: rgba(208, 208, 208, 0.07);
 $primary-font:'proxima_nova_rgregular' , sans-serif;
 $title-font:'proxima_nova_rgbold', sans-serif;
+
+$bp-small:640px;
+$bp-medium:768px;
+$bp-xmedium:960px;
+$bp-large:1024px;
+$bp-xlarge:1200px;
+
 body{
 	font:400 15px/1.67 $primary-font;
 	color: $text-color;
@@ -45,6 +53,15 @@ main {
 font-family: $title-font;
 	letter-spacing: 0.07em;
 	text-transform: uppercase;
+	@media screen and (max-width:$bp-xlarge) {
+		font-size: 120px;
+	}
+	@media screen and (max-width:$bp-xmedium) {
+		font-size: 90px;
+	}
+	@media screen and (max-width:$bp-small) {
+		font-size: 50px;
+	}
 }
 .ba-title {
 	color: $black;
@@ -54,6 +71,15 @@ font-family: $title-font;
 	margin: 0;
 	text-transform: uppercase;
 	letter-spacing: 0.07em;
+	@media screen and (max-width:$bp-xmedium) {
+		font-size: 36px;
+		line-height: 60px;
+	}
+	@media screen and (max-width:$bp-medium) {
+		font-size: 28px;
+		line-height: 35px;
+	}
+	
 }
 
 
@@ -90,6 +116,17 @@ button,
 	left: 36.6%;
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
+	@media screen and (max-width:$bp-medium) {
+		padding: 0 25px 0 40px;
+		line-height: 50px;
+		font-size: 15px;
+		top: 50%;
+		left: 10%;
+	}
+	@media screen and (max-width:$bp-xmedium) {
+		
+		left: 20%;
+	}
 	&:hover {
 		svg {
 			transform: translateX(10px);
@@ -101,6 +138,7 @@ button,
 		transition: transform 0.3s ease-in;
 	}
 }
+
 .ba-button--learn-black{
 	font-size: 14px;
 	color: $black;
@@ -155,6 +193,17 @@ button,
 		left: 40px;
 		transform: translateY(-50%);
 	}
+	@media screen and (max-width:$bp-medium) {
+		&:before {
+		left: 5%;
+		}
+	}
+}
+.ba-menu-button{
+	svg {
+		fill: $theme-color;
+		stroke: transparent;
+	}
 }
 input[type="submit"]:hover,
 input[type="button"]:hover,
@@ -185,6 +234,68 @@ select:focus {
 textarea {
 
 }
+///mobile menu 
+.ba-mobile-nav {	
+	position: fixed;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 230px;
+		background: #363636;
+		z-index: 10;
+		transform: translateX(100%);
+	
+		transition: opacity .3s ease-out, visibility .3s ease-out;
+	transition: transform .3s ease-out; 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	&.ba-open	{
+		transform: translateX(0);
+	
+	}
+	&__item{
+		padding-left:30px;
+		padding-top: 30px;
+	}
+	&__link{
+		text-decoration: none;
+		color: $nav-grey;
+		text-transform: uppercase;
+		font-weight: 700;
+		&:hover {
+			color:$white;
+		}
+	}
+	
+	
+}
+.ba-wrap {
+	position: relative;
+    left: 0;
+	transition: left .3s ease-out;
+	&.ba-open {
+		left: -230px;
+	}
+}
+.ba-overlay {
+	position: fixed;
+	z-index: 9;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.6);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity .3s ease-out, visibility .3s ease-out;
+	&.ba-open-overlay {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+
 .ba-intro {
 	position: relative;
 			&:after {
@@ -206,34 +317,117 @@ textarea {
 		left: 36.5%;
 		z-index: 3;
 		letter-spacing: 0.2em;
+		@media screen and (max-width:$bp-medium) {
+			font-size: 60px;
+			top: 30%;
+			left: 10%;
+		}
+		@media screen and (max-width:$bp-xmedium) {
+			left: 20%;
+		}
+		
 	}
-	&__bg-wood{
+	&__bg-wood-slider{
+		position: relative;
+		z-index: 1;
+		width: 50%;
+		@media screen and (max-width:$bp-xmedium) {
+			display: none;
+		}
+		
+	}
+}
+.ba-intro__bg-wood-slide {
+	position: relative;
+	z-index: 1;
+	display:flex !important;
+	height: auto;
+
+	&:before {
 		position: absolute;
+		content: '';
 		top: 0;
 		right: 0;
-		z-index: 1;
-		&:before {
-			position: absolute;
-			content: '';
-			top: 0;
-			right: 0;
-			left: 0;
-			bottom: 0;
-			background: rgba(0,0,0,0.9);
-			z-index:2;
+		left: 0;
+		bottom: 0;
+		background: rgba(0,0,0,0.9);
+		z-index:3;
+	}
+	& img {
+		width: 100%;
+	}
+}
+.ba-slider {
+	width: 50%;
+	@media screen and (max-width:$bp-xmedium) {
+		width:100%;
+
+	}
+	@media screen and (max-width:$bp-small) {
+		.slick-track {
+			height: 700px;
 		}
 	}
+	
+}
+
+.ba-slider-wrap {
+	display: flex;
+	& .slick-dots {
+		position: absolute;
+		left:5%;
+		transform: rotate(90deg);
+		bottom: 40%;
+		margin: 20px 0 0 ;
+		padding: 0;
+		font-size: 0;
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		z-index: 3;
+		li {
+			padding: 0 5px;
+		}
+		@media screen and (max-width:$bp-xmedium) {
+			left: 50%;
+			bottom: 5%;
+			transform: translateX(-50%);
+		}
+		
+		button {
+			display: inline-block;
+			padding: 0;
+			background:none;
+			border: none;
+			text-indent: -999px;
+			overflow: hidden;
+			width: 10px;
+			height: 10px;
+			border: 2px solid $theme-color;
+			border-radius:50%;
+			&:hover ,&:active {
+				background-color:$theme-color;
+				outline: none;
+			}
+	
+		}
+		.slick-active {
+			button {
+				background-color:$theme-color;
+			}
+		}
+	
+}
 }
 .ba-wood-title {
 	position:absolute;
 	color:$theme-color;
 	transform: rotate(90deg);
-	z-index: 1;
+	z-index: 2;
 	top: 50%;
 	left: 50%;
 	font-size: 13.63px;
 	font-weight: 700;
-
 }
 .ba-header {
 	position: absolute;
@@ -242,7 +436,25 @@ textarea {
 	top:25px ;
 	left: 36.5%;
 	z-index: 3;
-
+	
+	@media screen and (max-width:$bp-xlarge) {
+		left: 20%;
+	}
+	@media screen and (max-width:$bp-xmedium) {
+		left: 10%;
+	}
+	@media screen and (max-width:$bp-medium) {
+		// justify-content: space-around;
+		width: 100%;
+		}
+		& .ba-menu-button {
+			position: absolute;
+			right: 30%;
+			@media screen and (min-width:$bp-medium) {
+			display: none;
+			}
+		}
+	
 }
 .ba-logo {
 	position: relative;
@@ -260,9 +472,17 @@ textarea {
 	list-style-type: none;
 	padding: 0;
 	margin-top: 17px;
-
+	@media screen and (max-width:$bp-medium) {
+		display: none;
+	}
 	&__item{
 		margin-left: 105px;
+		@media screen and (max-width:$bp-xlarge) {
+			margin-left: 70px;
+		}
+		@media screen and (max-width:$bp-xmedium) {
+			margin-left: 50px;
+		}
 
 	}
 	&__link{
@@ -274,6 +494,8 @@ textarea {
 			color:$white;
 		}
 	}
+	
+	
 }
 .languagepicker {
 	position: absolute;
@@ -282,10 +504,12 @@ textarea {
 	height: 40px;
 	overflow: hidden;
 	transition: all .3s ease;
-	right: 20px;
+	right: 2%;
 	top: 20px;
 	z-index: 2;
-
+	@media screen and (max-width:$bp-medium) {
+		top: 3px;
+		}
 	&:hover{
 		height: 81px;
 	}
@@ -318,6 +542,8 @@ textarea {
 }
 .ba-slide {
 	position:relative;
+	display:flex !important;
+	height: auto;
 	&:before{
 		position:absolute;
 		content: '';
@@ -339,6 +565,9 @@ textarea {
 		transform: rotate(90deg);
 		z-index: 3;
 		font-weight: 700;
+		@media screen and (max-width:$bp-xmedium) {
+			display: none;
+		}
 		&:before {
 			position: absolute;
 			content:'';
@@ -356,6 +585,13 @@ textarea {
 	top: 61%;
 	left: 36.6%;
 	transition: transform .3s ease-in;
+	@media screen and (max-width:$bp-xmedium) {
+		top: 70%;
+		left: 20%;
+	}
+	@media screen and (max-width:$bp-medium) {
+		display: none;
+	}
 	&:hover {
 		transform: translateY(5%);
 	}
@@ -367,18 +603,35 @@ textarea {
 	display: flex;
 	position: relative;
 	padding: 104px 0 150px;
-
+	@media screen and (max-width:$bp-xmedium) {
+		padding: 80px 0 0;
+		}
+	@media screen and (max-width:$bp-medium) {
+	flex-direction: column;
+	}
 
 	&__info {
 		padding: 90px 36px 0 166px;
-
+		@media screen and (max-width:$bp-xlarge) {
+			padding-left:100px ;
+		}
+		@media screen and (max-width:$bp-xmedium) {
+			padding-left:25px ;
+		}
+		@media screen and (max-width:$bp-medium) {
+			width: 100%;
+			padding:30px 10px 10px 10px ;
+		}
 		&:before {
 			position: absolute;
 			content:'';
 			width: 151px;
 			border-bottom:1px solid $black;
 			top: 36%;
-			    left: -1%;
+				left: -1%;
+				@media screen and (max-width:$bp-xlarge) {
+					left: -6%;
+				}
 
 		}
 		&:after {
@@ -388,6 +641,9 @@ textarea {
 			border-bottom:3px solid $theme-color;
 			top: 45%;
 			left: 8%;
+			@media screen and (max-width:$bp-xlarge) {
+				left:3%;
+		}
 
 		}
 		& p {
@@ -441,6 +697,9 @@ textarea {
 .ba-custom-title--furniture {
 	top: 15%;
 	left: 69%;
+	@media screen and (max-width:$bp-large) {
+		left: 45%;;
+	}
 }
 
 //// DECOR SECTION
@@ -448,6 +707,13 @@ textarea {
 	display: flex;
 	position: relative;
 	padding: 130px 0 150px;
+	@media screen and (max-width:$bp-xmedium) {
+		padding: 80px 0 90px;
+		}
+	@media screen and (max-width:$bp-medium) {
+		flex-wrap: wrap;
+		padding: 30px 0 40px;
+		}
 			&:after {
 				position:absolute;
 				content:'D';
@@ -460,7 +726,19 @@ textarea {
 		text-align: right;
 		padding-right: 180px;
 	    padding-left: 120px;
-	    padding-top: 95px;
+		padding-top: 95px;
+		@media screen and (max-width:$bp-xlarge) {
+			padding-left:60px ;
+			padding-right: 80px;
+		}
+		@media screen and (max-width:$bp-xmedium) {
+			padding-left:25px ;
+		}
+		@media screen and (max-width:$bp-medium) {
+			text-align: left;
+			width: 100%;
+			padding:30px 10px 10px 10px ;
+		}
 	    &:before {
 	    	position: absolute;
 	    	content:'';
@@ -486,6 +764,14 @@ textarea {
 		margin-left: -25px;
 		flex-shrink: 0;
 		box-shadow: 0px 0px 14.56px 1.44px rgba(0, 0, 0, 0.25);
+		@media screen and (max-width:$bp-large) {
+			width: 50%;
+		}
+		@media screen and (max-width:$bp-medium) {
+			width: 100%;
+			order:1;
+			margin-left:0;
+		}
 		&:after {
 			position: absolute;
 			content:'';
@@ -514,6 +800,9 @@ textarea {
 .ba-quality {
 	text-align: center;
 	padding: 53px 0 137px;
+	@media screen and (max-width:$bp-medium) {
+		padding: 10px 0 30px;
+	}
 	& p {
 		margin: 22px auto 0;
 		max-width: 560px;
@@ -522,8 +811,11 @@ textarea {
 .ba-works {
 	padding-top: 78px;
 	display: flex;
-	justify-content: center;
-	padding-right: 82px;
+	justify-content: space-around;
+	@media screen and (max-width:$bp-small) {
+		flex-wrap:wrap;
+		padding-top:20px;
+	}
 	&__title{
 		font-size: 16px;
 		position: relative;
@@ -539,13 +831,13 @@ textarea {
 	&__container {
 		display: flex;
 		flex-direction: column;
-		padding-left: 82px;
+		
 	}
 	&__item {
 		border-radius: 50%;
 		border:1px solid #bababa;
-		width: 264px;
-		height: 264px;
+		max-width: 264px;
+		max-height: 264px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -568,14 +860,33 @@ textarea {
 	background-size: cover;
 	color:$white;
 	position: relative;
+	@media screen and (max-width:$bp-medium) {
+		padding:60px 0 55px;
+		
+	}
+	@media screen and (max-width:$bp-small) {
+		padding:30px 0 25px;
+		
+	}
 	&:after {
 		position: absolute;
 		content:'';
-		background: url('../img/bigplay.png') no-repeat;
+		background: url('../img/bigplay.png') no-repeat 50%;
+		background-size: cover;
 		width: 865px;
 		height: 832px;
 		top: 47px;
 		right: 105px;
+		@media screen and (max-width:$bp-xlarge) {
+			width: 500px;
+			height: 490px;
+		}
+		@media screen and (max-width:$bp-medium) {
+			width: 300px;
+			height: 300px;
+			top: 10%;
+			right: 10%;
+		}
 	}
 	&:before {
 			position:absolute;
@@ -591,6 +902,18 @@ textarea {
 		margin: 0 auto;
 		padding: 203px 0 186px 385px;
 		position: relative;
+		@media screen and (max-width:$bp-xlarge) {
+			padding:70px 0 186px 185px;
+			border:none;
+		}
+		@media screen and (max-width:$bp-medium) {
+			padding:70px 0 30px 35px;
+			
+		}
+		@media screen and (max-width:$bp-small) {
+			padding:30px 0 10px 15px;
+			
+		}
 		&:before {
 				position: absolute;
 				content:'';
@@ -598,6 +921,7 @@ textarea {
 				border-left:1px solid $white;
 				top: 40%;
 				left: 88%;
+				
 		}
 
 	}
@@ -637,7 +961,14 @@ textarea {
  .ba-about {
  	display: flex;
  	position: relative;
- 	padding: 139px 0 121px;
+	 padding: 139px 0 121px;
+	 @media screen and (max-width:$bp-xmedium) {
+		padding: 80px 0 90px;
+		}
+	@media screen and (max-width:$bp-medium) {
+		flex-wrap: wrap;
+		padding: 30px 0 40px;
+		}
  	&:after {
  		position:absolute;
  		content:'A';
@@ -651,7 +982,19 @@ textarea {
  		padding-top: 75px;
  	    padding-left: 97px;
  	    max-width: 432px;
- 	    position: relative;
+		 position: relative;
+		 @media screen and (max-width:$bp-xlarge) {
+			padding-left:60px ;
+			
+		}
+		@media screen and (max-width:$bp-xmedium) {
+			padding-left:25px ;
+		}
+		@media screen and (max-width:$bp-medium) {
+			text-align: left;
+			width: 100%;
+			padding:30px 10px 10px 10px ;
+		}
  	    	&:before {
  	    		position: absolute;
  	    		content:'';
@@ -676,7 +1019,14 @@ textarea {
  		position: relative;
  		flex-shrink: 0;
  		box-shadow: 0px 0px 14.56px 1.44px rgba(0, 0, 0, 0.25);
-
+		 @media screen and (max-width:$bp-large) {
+			width: 50%;
+		}
+		@media screen and (max-width:$bp-medium) {
+			width: 100%;
+			order:1;
+			margin-left:0;
+		}
  		& img {
  			display: block;
 
@@ -696,6 +1046,10 @@ textarea {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		@media screen and (max-width:$bp-small) {
+			flex-wrap:wrap;
+			
+		}
 		& a{
 			text-decoration: none;
 			color: $nav-grey;
