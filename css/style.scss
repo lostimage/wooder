@@ -116,6 +116,10 @@ button,
 	left: 36.6%;
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
+	@media screen and (max-width:$bp-xmedium) {
+		
+		left: 20%;
+	}
 	@media screen and (max-width:$bp-medium) {
 		padding: 0 25px 0 40px;
 		line-height: 50px;
@@ -123,10 +127,7 @@ button,
 		top: 50%;
 		left: 10%;
 	}
-	@media screen and (max-width:$bp-xmedium) {
-		
-		left: 20%;
-	}
+	
 	&:hover {
 		svg {
 			transform: translateX(10px);
@@ -317,14 +318,15 @@ textarea {
 		left: 36.5%;
 		z-index: 3;
 		letter-spacing: 0.2em;
+		@media screen and (max-width:$bp-xmedium) {
+			left: 20%;
+		}
 		@media screen and (max-width:$bp-medium) {
 			font-size: 60px;
 			top: 30%;
 			left: 10%;
 		}
-		@media screen and (max-width:$bp-xmedium) {
-			left: 20%;
-		}
+	
 		
 	}
 	&__bg-wood-slider{

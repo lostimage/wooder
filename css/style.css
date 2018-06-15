@@ -1072,6 +1072,9 @@ button,
   left: 36.6%;
   text-transform: uppercase;
   letter-spacing: 0.2em; }
+  @media screen and (max-width: 960px) {
+    .ba-button--learn-more {
+      left: 20%; } }
   @media screen and (max-width: 768px) {
     .ba-button--learn-more {
       padding: 0 25px 0 40px;
@@ -1079,9 +1082,6 @@ button,
       font-size: 15px;
       top: 50%;
       left: 10%; } }
-  @media screen and (max-width: 960px) {
-    .ba-button--learn-more {
-      left: 20%; } }
   .ba-button--learn-more:hover {
     background-color: rgba(0, 0, 0, 0.5); }
     .ba-button--learn-more:hover svg {
@@ -1255,14 +1255,14 @@ select {
     left: 36.5%;
     z-index: 3;
     letter-spacing: 0.2em; }
+    @media screen and (max-width: 960px) {
+      .ba-intro__title {
+        left: 20%; } }
     @media screen and (max-width: 768px) {
       .ba-intro__title {
         font-size: 60px;
         top: 30%;
         left: 10%; } }
-    @media screen and (max-width: 960px) {
-      .ba-intro__title {
-        left: 20%; } }
   .ba-intro__bg-wood-slider {
     position: relative;
     z-index: 1;
