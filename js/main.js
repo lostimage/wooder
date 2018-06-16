@@ -5,6 +5,7 @@ $(document).ready(function(){
 		arrows:false,
 		asNavFor:'.ba-intro__bg-wood-slider',
 		appendDots:'.ba-slider-wrap',
+		infinity:true,
 		responsive: [
 			{
 				breakpoint: 960,
@@ -20,7 +21,8 @@ $(document).ready(function(){
 	$('.ba-intro__bg-wood-slider').slick({
 		vertical:true,
 	verticalSwiping:true,
-  	dots:false,
+	  dots:false,
+	  infinity:true,
 		arrows:false,
 		asNavFor:'.ba-slider'
 	});

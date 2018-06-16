@@ -320,9 +320,10 @@ textarea {
 		letter-spacing: 0.2em;
 		@media screen and (max-width:$bp-xmedium) {
 			left: 20%;
+			font-size: 60px;
 		}
 		@media screen and (max-width:$bp-medium) {
-			font-size: 60px;
+			font-size: 40px;
 			top: 30%;
 			left: 10%;
 		}
@@ -446,15 +447,21 @@ textarea {
 		left: 10%;
 	}
 	@media screen and (max-width:$bp-medium) {
-		// justify-content: space-around;
-		width: 100%;
+
+	left: 0;	
+	width: 100%;
+	padding-left: 10%;
 		}
 		& .ba-menu-button {
 			position: absolute;
 			right: 30%;
+			@media screen and (max-width:$bp-small) {
+				right: 15%;
+				}
 			@media screen and (min-width:$bp-medium) {
 			display: none;
 			}
+		
 		}
 	
 }

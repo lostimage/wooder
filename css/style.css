@@ -1257,10 +1257,11 @@ select {
     letter-spacing: 0.2em; }
     @media screen and (max-width: 960px) {
       .ba-intro__title {
-        left: 20%; } }
+        left: 20%;
+        font-size: 60px; } }
     @media screen and (max-width: 768px) {
       .ba-intro__title {
-        font-size: 60px;
+        font-size: 40px;
         top: 30%;
         left: 10%; } }
   .ba-intro__bg-wood-slider {
@@ -1378,10 +1379,15 @@ select {
       left: 10%; } }
   @media screen and (max-width: 768px) {
     .ba-header {
-      width: 100%; } }
+      left: 0;
+      width: 100%;
+      padding-left: 10%; } }
   .ba-header .ba-menu-button {
     position: absolute;
     right: 30%; }
+    @media screen and (max-width: 640px) {
+      .ba-header .ba-menu-button {
+        right: 15%; } }
     @media screen and (min-width: 768px) {
       .ba-header .ba-menu-button {
         display: none; } }
