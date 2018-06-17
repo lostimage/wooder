@@ -641,6 +641,10 @@ textarea {
 				@media screen and (max-width:$bp-xlarge) {
 					left: -6%;
 				}
+				@media screen and (max-width:$bp-xmedium) {
+				border:none;
+			
+				}
 
 		}
 		&:after {
@@ -653,6 +657,10 @@ textarea {
 			@media screen and (max-width:$bp-xlarge) {
 				left:3%;
 		}
+		@media screen and (max-width:$bp-xmedium) {
+			border:none;
+		
+			}
 
 		}
 		& p {
@@ -683,7 +691,10 @@ textarea {
 
 	color: $black;
 	position: absolute;
-
+	@media screen and (max-width:$bp-xmedium) {
+			visibility: hidden;
+		
+	}
 	&:after {
 		position:absolute;
 		content:'';
@@ -691,7 +702,9 @@ textarea {
 		left: 39%;
 		height: 53px;
 		border-left: 4px solid $theme-color;
+		
 	}
+	
 	& span {
 		color:$theme-color;
 	}
@@ -754,15 +767,25 @@ textarea {
 	    	width: 151px;
 	    	border-bottom:1px solid $black;
 	    	top: 39%;
-	    	left: 87%;
-	    }
+			left: 87%;
+			@media screen and (max-width:$bp-xmedium) {
+				border:none;
+			
+				}
+		}
+		
+		
 	    &:after {
 	    	position: absolute;
 	    	content:'';
 	    	width: 44px;
 	    	border-bottom:4px solid $theme-color;
 	    	top: 47%;
-	    	left: 87%;
+			left: 87%;
+			@media screen and (max-width:$bp-xmedium) {
+				border:none;
+			
+				}
 	    }
 		& p {
 			margin: 0 0 15px;
@@ -930,7 +953,10 @@ textarea {
 				border-left:1px solid $white;
 				top: 40%;
 				left: 88%;
+				@media screen and (max-width:$bp-small) {
+					border:none;
 				
+					}
 		}
 
 	}
@@ -946,7 +972,11 @@ textarea {
 			width: 151px;
 			border-bottom:1px solid $white;
 			top: 23%;
-		    left: -35%;
+			left: -35%;
+			@media screen and (max-width:$bp-xmedium) {
+				border:none;
+			
+				}
 		}
 		&:after {
 			position: absolute;
@@ -955,6 +985,10 @@ textarea {
 			border-bottom:4px solid $theme-color;
 			top: 121%;
 			left: -14%;
+			@media screen and (max-width:$bp-xmedium) {
+				border:none;
+			
+				}
 
 		}
 	}
@@ -1010,7 +1044,11 @@ textarea {
  	    		width: 151px;
  	    		border-bottom:1px solid $black;
  	    		top: 29%;
- 	    		left: -17%;
+				 left: -17%;
+				 @media screen and (max-width:$bp-xmedium) {
+					border:none;
+				
+					}
  	    	}
  	    	&:after {
  	    		position: absolute;
@@ -1018,7 +1056,11 @@ textarea {
  	    		width: 44px;
  	    		border-bottom:4px solid $theme-color;
  	    		top: 48%;
- 	    		left: 7%;
+				 left: 7%;
+				 @media screen and (max-width:$bp-xmedium) {
+					border:none;
+				
+					}
  	    	}
  		& p {
 
